@@ -32,6 +32,7 @@ const gitHubUserReducer = (
             return {
                 ...state,
                 gitHubUsersByUser: action.payload,
+                isLoading:false
             };
         case LOADING_ERROR_GITHUB_USER_BY_USER:
             return {

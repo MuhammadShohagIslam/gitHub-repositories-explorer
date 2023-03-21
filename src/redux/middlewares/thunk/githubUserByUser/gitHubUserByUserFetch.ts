@@ -60,8 +60,8 @@ const loadGitHubUserDataByUser = (
                     repository.push(repObj);
                 }
                 const userObject: githubUserDataByUser = {
-                    repository_id: gitHubUser.data[0].id,
-                    repository_owner: gitHubUser.data[0].owner.login,
+                    repository_id: gitHubUser.data[0]?.id,
+                    repository_owner: gitHubUser.data[0]?.owner?.login,
                     repositories: repository,
                 };
                 return userObject;

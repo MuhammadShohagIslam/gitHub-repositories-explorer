@@ -11,12 +11,11 @@ type SearchInputs = {
     search: string,
 };
 
-
-
 const Home = () => {
     const [searchUser, setSearchUser] = useState("")
     const dispatch = useAppDispatch();
     const { gitHubUsers, gitHubUsersByUser } = useAppSelector((state: RootState) => state);
+    const { gitHubUsersByUser: gitHubUsersDataByUser, isLoading } = gitHubUsersByUser;
     const { register, handleSubmit, formState: { errors } } = useForm<SearchInputs>();
     const registerOptions = {
         search: { required: "Search is required" },
@@ -33,7 +32,10 @@ const Home = () => {
 
     const handleSearch: SubmitHandler<SearchInputs> = data => {
         if (data.search) {
-            setSearchUser(data.search)
+            setSearchUser(data.search);
+            // delete preview whole data
+            gitHubUsersDataByUser.length = 0;
+            // then store new github users data
             dispatch(loadGitHubUserDataByUser(data.search));
         }
     }
@@ -54,10 +56,15 @@ const Home = () => {
                     </div>
 
                 </form>
-                <div>
-                    {searchUser && <span>Showing User For {searchUser}</span>}
+                <div className='mt-4'>
+                    {searchUser && <span className='text-gray-700'>Showing Users For "{searchUser}"</span>}
                 </div>
-                <Accordion data={gitHubUsersByUser.gitHubUsersByUser} />
+                {isLoading ? (
+                    <h2 className='text-black text-md text-center'>Loading Users</h2>
+                ) : (
+                    <Accordion data={gitHubUsersDataByUser} />
+                )}
+
             </div>
         </section>
     );
