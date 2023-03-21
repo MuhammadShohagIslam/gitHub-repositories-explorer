@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import Accordion from "../../components/shared/Accordion/Accordion";
+import Accordion from "../../components/shared/Accordion/Accordion";
 import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import loadGitHubUserDataByUser from '../../redux/middlewares/thunk/githubUser/gitHubUserFetch';
@@ -54,7 +54,7 @@ const Home = () => {
                     </div>
 
                 </form>
-                {/* <Accordion accordionsData={[]}/> */}
+                <Accordion data={gitHubUsers}/>
             </div>
         </section>
     );

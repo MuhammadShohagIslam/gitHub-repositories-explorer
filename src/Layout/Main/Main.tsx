@@ -6,7 +6,7 @@ const MainLayout = () => {
     return (
         <>
             <Navbar />
-            <main className="h-screen bg-gray-200"><Outlet></Outlet></main>
+            <main className="h-screen overflow-y-auto bg-gray-200"><Outlet></Outlet></main>
             <Footer />
         </>
     );

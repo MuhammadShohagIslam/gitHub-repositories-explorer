@@ -46,14 +46,19 @@ const loadGitHubUserDataByUser = (
                 const repository = [];
                 for (let rep of gitHubUser.data) {
                     const repObj = {
-                        repository_owner: rep?.owner.login,
-                        repository_name: rep?.full_name,
+                        id: rep?.id,
+                        repository_url: rep?.html_url,
                         star: rep?.stargazers_count,
                         description: rep?.description,
                     };
                     repository.push(repObj);
                 }
-                return repository;
+                const userObject = {
+                    repository_id: gitHubUser.data[0].id,
+                    repository_owner: gitHubUser.data[0].owner.login, 
+                    repositories :repository 
+                }
+                return userObject;
             });
             // success dispatch with github custom gitHub users
             dispatch(loadGitHubUser(gitHubUsers));

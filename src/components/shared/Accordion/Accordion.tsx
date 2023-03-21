@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AccordionItem from "./AccordionItem";
 
-const Accordion = (accordionsData: any[]) => {
+const Accordion = ({ data }: { data: any[] }) => {
 	const [openAccordionBody, setAccordionBody] = useState<boolean | number>(
 		false
 	);
@@ -20,12 +20,12 @@ const Accordion = (accordionsData: any[]) => {
 				</h2>
 			</div>
 			<div className="shadow-lg mt-12 w-4/6 mx-auto ">
-				{accordionsData &&
-					accordionsData.map((accordion: any) => (
+				{data &&
+					data.slice(0, 3).map((accordion: any) => (
 						<AccordionItem
-							key={accordion._id}
-							id={accordion._id}
-							openAccordionBody={openAccordionBody === accordion._id}
+							key={accordion.repository_id}
+							id={accordion.repository_id}
+							openAccordionBody={openAccordionBody === accordion.repository_id}
 							accordion={accordion}
 							toggleAccordion={toggleAccordion}
 						/>
