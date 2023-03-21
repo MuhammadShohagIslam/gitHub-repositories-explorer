@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import { Collapse } from "react-collapse";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { TiArrowSortedUp } from "react-icons/ti";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import { githubUserDataByUser } from "../../../redux/actionTypes/githubUserByUserActionTypes";
-import { Link } from "react-router-dom";
 
 type AccordionItemPropType = {
     openAccordionBody: boolean;

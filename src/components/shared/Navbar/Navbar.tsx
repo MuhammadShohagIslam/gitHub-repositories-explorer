@@ -3,8 +3,8 @@ import Logo from '../../../assets/Logo/logo.png'
 
 const Navbar = () => {
     return (
-        <nav className="p-3 border-gray-200 bg-gray-50 ">
-            <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <nav className="p-3 border-gray-200 bg-gray-50 px-20">
+            <div className="flex flex-wrap items-center justify-between mx-auto">
                 <Link to="/" className="flex items-center">
                     <img src={Logo} className="h-6 mr-3 sm:h-10" alt="GitHub Logo" />
                     <span className="self-center text-xl font-semibold whitespace-nowrap ">GitHub</span>
