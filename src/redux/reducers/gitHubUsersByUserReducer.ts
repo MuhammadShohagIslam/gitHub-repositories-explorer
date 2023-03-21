@@ -4,7 +4,6 @@ import {
     LOADING_ERROR_GITHUB_USER_BY_USER,
     LOADING_START_GITHUB_USER_BY_USER,
     LOADING_SUCCESS_GITHUB_USER_BY_USER,
-    REMOVE_FROM_GITHUB_USER_BY_USER,
 } from "../actionTypes/githubUserByUserActionTypes";
 
 interface IDefaultState {
@@ -32,21 +31,13 @@ const gitHubUserReducer = (
             return {
                 ...state,
                 gitHubUsersByUser: action.payload,
-                isLoading:false
+                isLoading: false,
             };
         case LOADING_ERROR_GITHUB_USER_BY_USER:
             return {
                 ...state,
                 isLoading: false,
                 isError: true,
-            };
-        case REMOVE_FROM_GITHUB_USER_BY_USER:
-            return {
-                ...state,
-                gitHubUsersByUser: state.gitHubUsersByUser.filter(
-                    (gitHubUserByUser: githubUserDataByUser) =>
-                        gitHubUserByUser.repository_owner !== action.payload
-                ),
             };
         default:
             return state;
