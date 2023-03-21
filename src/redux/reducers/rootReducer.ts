@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import gitHubUserReducer from "./gitHubUserReducer";
+import gitHubUsersReducer from "./gitHubUsers";
+import gitHubUserByUserReducer from "./gitHubUsersByUserReducer";
 
 const rootReducer = combineReducers({
-    gitHubUsers: gitHubUserReducer,
+    gitHubUsers: gitHubUsersReducer,
+    gitHubUsersByUser: gitHubUserByUserReducer
 });
 
 export default rootReducer;

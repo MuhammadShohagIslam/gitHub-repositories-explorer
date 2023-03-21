@@ -1,12 +1,13 @@
 import axios from "axios";
-import { loadGitHubUser } from "../../../actions/githubUserAction";
-import { RootState } from "../../../store/store";
-import { ThunkAction } from "redux-thunk";
 import { AnyAction } from "redux";
+import { ThunkAction } from "redux-thunk";
+import { loadGitHubUserByUser } from "../../../actions/githubUserByUserAction";
 import {
-    LOADING_START_GITHUB_USER,
-    LOADING_ERROR_GITHUB_USER,
-} from "../../../actionTypes/githubUserActionTypes";
+    githubUserDataByUser,
+    LOADING_ERROR_GITHUB_USER_BY_USER,
+    LOADING_START_GITHUB_USER_BY_USER,
+} from "../../../actionTypes/githubUserByUserActionTypes";
+import { RootState } from "../../../store/store";
 
 const loadGitHubUserDataByUser = (
     user: string
@@ -15,7 +16,7 @@ const loadGitHubUserDataByUser = (
         try {
             // loading start dispatch
             dispatch({
-                type: LOADING_START_GITHUB_USER,
+                type: LOADING_START_GITHUB_USER_BY_USER,
             });
             // loading all of the user based on given input user
             const usersResponse = await axios.get(
@@ -42,8 +43,13 @@ const loadGitHubUserDataByUser = (
             const data = await Promise.all(promiseData);
 
             // make gitHub Users object
-            const gitHubUsers = data?.map((gitHubUser: any) => {
-                const repository = [];
+            const gitHubUsersByUser = data?.map((gitHubUser) => {
+                const repository: {
+                    id: number;
+                    repository_url: string;
+                    star: string;
+                    description: string;
+                }[] = [];
                 for (let rep of gitHubUser.data) {
                     const repObj = {
                         id: rep?.id,
@@ -53,19 +59,19 @@ const loadGitHubUserDataByUser = (
                     };
                     repository.push(repObj);
                 }
-                const userObject = {
+                const userObject: githubUserDataByUser = {
                     repository_id: gitHubUser.data[0].id,
-                    repository_owner: gitHubUser.data[0].owner.login, 
-                    repositories :repository 
-                }
+                    repository_owner: gitHubUser.data[0].owner.login,
+                    repositories: repository,
+                };
                 return userObject;
             });
             // success dispatch with github custom gitHub users
-            dispatch(loadGitHubUser(gitHubUsers));
+            dispatch(loadGitHubUserByUser(gitHubUsersByUser));
         } catch (error) {
             console.log(error);
             dispatch({
-                type: LOADING_ERROR_GITHUB_USER,
+                type: LOADING_ERROR_GITHUB_USER_BY_USER,
             });
         }
     };

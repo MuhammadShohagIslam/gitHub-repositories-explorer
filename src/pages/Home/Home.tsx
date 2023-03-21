@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import Accordion from "../../components/shared/Accordion/Accordion";
 import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import loadGitHubUserDataByUser from '../../redux/middlewares/thunk/githubUser/gitHubUserFetch';
+import loadGitHubUserDataByUser from '../../redux/middlewares/thunk/githubUserByUser/gitHubUserByUserFetch';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import { RootState } from '../../redux/store/store';
+import loadGitHubUsersData from '../../redux/middlewares/thunk/gitHubUsers/gitHubUsersFetch';
 
 type SearchInputs = {
     search: string,
@@ -13,22 +14,18 @@ type SearchInputs = {
 
 
 const Home = () => {
-    const [loading, setLoading] = useState(true);
     const [searchUser, setSearchUser] = useState("")
     const dispatch = useAppDispatch();
-    const gitHubUsers = useAppSelector((state: RootState) => state.gitHubUsers.gitHubUsers);
+    const { gitHubUsers, gitHubUsersByUser } = useAppSelector((state: RootState) => state);
     const { register, handleSubmit, formState: { errors } } = useForm<SearchInputs>();
     const registerOptions = {
         search: { required: "Search is required" },
     };
 
-    // useEffect(() => {
+    useEffect(() => {
+        dispatch(loadGitHubUsersData());
+    }, [dispatch]);
 
-    // }, [dispatch]);
-
-    // const laodingData = () => {
-
-    // }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -45,6 +42,7 @@ const Home = () => {
             toast.error("Please Enter Github UserName")
         }
     }
+    console.log(gitHubUsers.gitHubUsers)
     return (
         <section className="pt-20">
             <div className="w-2/5 m-auto bg-white p-5">
@@ -57,9 +55,9 @@ const Home = () => {
 
                 </form>
                 <div>
-                   {searchUser && <span>Showing User For {searchUser}</span>} 
+                    {searchUser && <span>Showing User For {searchUser}</span>}
                 </div>
-                <Accordion data={gitHubUsers} />
+                <Accordion data={gitHubUsersByUser.gitHubUsersByUser} />
             </div>
         </section>
     );
