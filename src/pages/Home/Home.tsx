@@ -2,20 +2,41 @@ import { useEffect, useState } from 'react';
 // import Accordion from "../../components/shared/Accordion/Accordion";
 import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { toast } from "react-hot-toast";
-
+import loadGitHubUserDataByUser from '../../redux/middlewares/thunk/githubUser/gitHubUserFetch';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
+import { RootState } from '../../redux/store/store';
 
 type SearchInputs = {
     search: string,
 };
 
+
+
 const Home = () => {
+    const [loading, setLoading] = useState(true);
+    const dispatch = useAppDispatch();
+    const gitHubUsers = useAppSelector((state: RootState) => state.gitHubUsers.gitHubUsers);
     const { register, handleSubmit, formState: { errors } } = useForm<SearchInputs>();
     const registerOptions = {
         search: { required: "Search is required" },
     };
 
+    // useEffect(() => {
+
+    // }, [dispatch]);
+
+    // const laodingData = () => {
+
+    // }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleSearch: SubmitHandler<SearchInputs> = data => {
-        console.log(data);
+        if (data.search) {
+            dispatch(loadGitHubUserDataByUser(data.search));
+        }
     }
     const handleError = (errors: FieldErrors<SearchInputs>) => {
         if (errors.search?.message) {
