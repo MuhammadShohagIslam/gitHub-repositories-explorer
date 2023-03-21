@@ -12,7 +12,7 @@ export type githubUserDataByUser = {
         id: number;
         repository_name:string;
         repository_url: string;
-        star: string;
+        star: number;
         description: string;
     }[];
 };

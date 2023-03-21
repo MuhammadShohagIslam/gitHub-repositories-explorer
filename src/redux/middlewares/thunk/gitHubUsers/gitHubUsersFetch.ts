@@ -51,7 +51,7 @@ const loadGitHubUsersData = (): ThunkAction<
                     id: number;
                     repository_url: string;
                     repository_name: string;
-                    star: string;
+                    star: number;
                     description: string;
                 }[] = [];
                 for (let rep of gitHubUser.data) {
@@ -64,10 +64,18 @@ const loadGitHubUsersData = (): ThunkAction<
                     };
                     repository.push(repObj);
                 }
+                // calculating total star per user
+                const calTotalStar = repository.reduce((acc, cur) => {
+                    acc = acc + cur.star;
+                    return acc;
+                }, 0);
                 const userObject: githubUsersData = {
                     repository_id: gitHubUser.data[0]?.id,
+                    owner_url: gitHubUser.data[0]?.owner?.html_url,
+                    avatar_url: gitHubUser.data[0]?.owner?.avatar_url,
                     repository_owner: gitHubUser.data[0]?.owner?.login,
                     repositories: repository,
+                    totalStar: calTotalStar,
                 };
                 return userObject;
             });

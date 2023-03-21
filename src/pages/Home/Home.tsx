@@ -7,6 +7,8 @@ import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import { RootState } from '../../redux/store/store';
 import loadGitHubUsersData from '../../redux/middlewares/thunk/gitHubUsers/gitHubUsersFetch';
 import Jumbotron from '../../components/shared/Jumbotron/Jumbotron';
+import TopRepositories from '../../components/shared/Users/TopRepositories';
+import SectionTitle from '../../components/shared/SectionTitle/SectionTitle';
 
 type SearchInputs = {
     search: string,
@@ -17,6 +19,8 @@ const Home = () => {
     const dispatch = useAppDispatch();
     const { gitHubUsers, gitHubUsersByUser } = useAppSelector((state: RootState) => state);
     const { gitHubUsersByUser: gitHubUsersDataByUser, isLoading } = gitHubUsersByUser;
+    const { gitHubUsers: gitHubUsersData, isLoading: isUsersLoading } = gitHubUsers;
+
     const { register, handleSubmit, formState: { errors } } = useForm<SearchInputs>();
     const registerOptions = {
         search: { required: "Search is required" },
@@ -25,11 +29,6 @@ const Home = () => {
     useEffect(() => {
         dispatch(loadGitHubUsersData());
     }, [dispatch]);
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     const handleSearch: SubmitHandler<SearchInputs> = data => {
         if (data.search) {
@@ -45,31 +44,32 @@ const Home = () => {
             toast.error("Please Enter Github UserName")
         }
     }
-    console.log(gitHubUsers.gitHubUsers)
     return (
         <>
             <Jumbotron name="Let's Go Github Explore with User" />
-            <section className="pt-20">
-                <div className="w-2/5 m-auto bg-white p-5">
+            <section className="pt-16 pb-10">
+                <SectionTitle title="Search Desire Github User" />
+                <div className="w-2/5 m-auto bg-white p-5 mt-10">
                     <form onSubmit={handleSubmit(handleSearch, handleError)}>
                         <label className="mb-2 text-sm font-medium text-gray-700 sr-only ">Search</label>
                         <div className="relative">
                             <input type="search" {...register('search', registerOptions.search)} className={`block w-full p-4 pl-10 text-sm text-gray-900 border-2 rounded-sm bg-gray-50 focus:border-gray-400 focus:outline-none ${errors.search?.message && "border-rose-600  focus-visible:border-rose-600"}`} placeholder="Search with User name" />
                             <button type="submit" className="block mt-2 w-full text-white bottom-2.5 bg-blue-400 hover:bg-blue-500 transition-all focus:outline-none focus:ring-transparent font-medium rounded-sm text-md px-4 py-2 ">Search</button>
                         </div>
-
                     </form>
                     <div className='mt-4'>
                         {searchUser && <span className='text-gray-700'>Showing Users For "{searchUser}"</span>}
                     </div>
                     {isLoading ? (
-                        <h2 className='text-black text-md text-center'>Loading Users</h2>
+                        <h2 className='text-blue-400 text-md text-center'>Loading Users...</h2>
                     ) : (
                         <Accordion data={gitHubUsersDataByUser} />
                     )}
 
                 </div>
             </section>
+            <TopRepositories data={gitHubUsersData} isLoading={isUsersLoading} />
+           
         </>
 
     );

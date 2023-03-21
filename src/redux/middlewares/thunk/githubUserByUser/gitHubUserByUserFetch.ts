@@ -48,7 +48,7 @@ const loadGitHubUserDataByUser = (
                     id: number;
                     repository_url: string;
                     repository_name: string;
-                    star: string;
+                    star: number;
                     description: string;
                 }[] = [];
                 for (let rep of gitHubUser.data) {

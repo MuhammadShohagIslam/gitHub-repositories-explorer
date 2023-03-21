@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* swiper for top_repositories_swiper */
+.top_repositories_swiper .swiper-button-prev,
+.top_repositories_swiper .swiper-button-next {
+    right: 0 !important;
+    border: 2px solid #0ea5e9 !important;
+    width: 43px !important;
+    height: 29px !important;
+    background-color: #0ea5e9 !important;
+    transition: all 0.4s !important;
+}
+.top_repositories_swiper .swiper-button-prev:hover,
+.top_repositories_swiper .swiper-button-next:hover {
+    background-color: transparent !important;
+}
+
+.top_repositories_swiper .swiper-button-next,
+.top_repositories_swiper .swiper-button-prev {
+    position: absolute;
+    bottom: 0 !important;
+    margin-top: 120px !important;
+}
+.top_repositories_swiper .swiper-button-next:after,
+.top_repositories_swiper .swiper-button-prev:after {
+    font-size: 15px !important;
+    color: white !important;
+    font-weight: bolder !important;
+    transition: all 0.4s !important;
+}
+.top_repositories_swiper .swiper-button-next:hover:after,
+.top_repositories_swiper .swiper-button-prev:hover:after {
+    color: black !important;
+}
+.top_repositories_swiper .swiper-button-prev {
+    left: 93% !important;
+}
+@media only screen and (max-width: 767px) {
+    .top_repositories_swiper .swiper-button-prev {
+        left: 68% !important;
+    }
+    .top_repositories_swiper .swiper-button-next,
+    .top_repositories_swiper .swiper-button-prev {
+        margin-top: 98px !important;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .top_repositories_swiper .swiper-button-prev {
+        left: 87% !important;
+    }
+    .top_repositories_swiper .swiper-button-next,
+    .top_repositories_swiper .swiper-button-prev {
+        margin-top: 105px !important;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .top_repositories_swiper .swiper-button-prev {
+        left: 90% !important;
+    }
+}
+/* End top_repositories_swiper */
+
+/* Start Scroll To Top */
+.scroll-to-top {
+    background-color: #0ea5e9 !important;
+    transition: all 0.4s;
+}
+.scroll-to-top svg {
+    width: 19px;
+    height: 27px;
+    display: inline-block;
+    fill: white;
+    transition: all 0.4s;
+}
+.scroll-to-top:hover {
+    background-color: #000 !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .scroll-to-top {
+        right: 10px !important;
+        bottom: 33px !important;
+        width: 33px !important;
+        height: 33px !important;
+    }
+    .scroll-to-top svg {
+        width: 12px;
+        height: 22px;
+        display: inline-block;
+        fill: #000;
+        transition: all 0.5s;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .scroll-to-top {
+        right: 12px !important;
+        bottom: 33px !important;
+    }
+}
+/* End Scroll To Top */

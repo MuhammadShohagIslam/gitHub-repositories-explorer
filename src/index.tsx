@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ScrollToTop from "react-scroll-to-top";
+import 'aos/dist/aos.css';
+import "swiper/swiper.min.css";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -9,6 +12,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <ScrollToTop smooth color="#000" />
     <App />
   </React.StrictMode>
 );

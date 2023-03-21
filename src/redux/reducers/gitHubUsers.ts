@@ -31,6 +31,7 @@ const gitHubUsersReducer = (
             return {
                 ...state,
                 gitHubUsers: action.payload,
+                isLoading: false,
             };
         case LOADING_ERROR_GITHUB_USERS:
             return {
