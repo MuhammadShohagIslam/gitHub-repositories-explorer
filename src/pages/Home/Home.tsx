@@ -14,6 +14,7 @@ type SearchInputs = {
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
+    const [searchUser, setSearchUser] = useState("")
     const dispatch = useAppDispatch();
     const gitHubUsers = useAppSelector((state: RootState) => state.gitHubUsers.gitHubUsers);
     const { register, handleSubmit, formState: { errors } } = useForm<SearchInputs>();
@@ -35,6 +36,7 @@ const Home = () => {
 
     const handleSearch: SubmitHandler<SearchInputs> = data => {
         if (data.search) {
+            setSearchUser(data.search)
             dispatch(loadGitHubUserDataByUser(data.search));
         }
     }
@@ -45,7 +47,7 @@ const Home = () => {
     }
     return (
         <section className="pt-20">
-            <div className="w-2/5 m-auto">
+            <div className="w-2/5 m-auto bg-white p-5">
                 <form onSubmit={handleSubmit(handleSearch, handleError)}>
                     <label className="mb-2 text-sm font-medium text-gray-700 sr-only ">Search</label>
                     <div className="relative">
@@ -54,7 +56,10 @@ const Home = () => {
                     </div>
 
                 </form>
-                <Accordion data={gitHubUsers}/>
+                <div>
+                   {searchUser && <span>Showing User For {searchUser}</span>} 
+                </div>
+                <Accordion data={gitHubUsers} />
             </div>
         </section>
     );

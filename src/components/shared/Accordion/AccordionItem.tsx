@@ -19,18 +19,18 @@ const AccordionItem = (props: AccordionItemPropType) => {
     const { openAccordionBody, toggleAccordion, id, accordion } = props;
 
     return (
-        <div>
+        <div className="mb-5 bg-white">
             <article
                 className="border-b"
                 onClick={() => toggleAccordion(id)}
             >
                 <div
                     className={`transition-all duration-700 border-l-4  bg-grey-lightest ${!openAccordionBody
-                        ? "border-transparent"
+                        ? "border-slate-100"
                         : "border-stone-800 dark:border-red-500 "
                         } `}
                 >
-                    <header className="flex justify-between items-center py-4 px-5 pl-8 pr-8 cursor-pointer select-none">
+                    <header className="flex justify-between bg-slate-100 items-center py-4 px-5 pl-8 pr-8 cursor-pointer select-none">
                         <span className="text-indigo font-thin text-lg">
                             {accordion?.repository_owner}
                         </span>
@@ -43,7 +43,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                         </div>
                     </header>
                     <Collapse isOpened={openAccordionBody}>
-                        <div>
+                        <div className="bg-white">
                             <div className="pl-8 pr-8  pb-5 text-grey-darkest">
                                 <ul className="pl-4">
                                     {accordion &&
@@ -51,9 +51,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                                             <li key={accordion.id} className="pb-2 text-sm">
                                                 {accordion?.star}
                                             </li>
-
                                         ))}
-
                                 </ul>
                             </div>
                         </div>
