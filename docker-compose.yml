@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  githubRepoExplorer:
+    build: ./
+    image: muhammadshohagislam/github-repositories-explorer
+    ports:
+      - '3000:3000'
+    volumes: 
+      - ./src:/app/src
+    stdin_open: true
+    tty: true 
+    env_file: 
+      - ./.env.local

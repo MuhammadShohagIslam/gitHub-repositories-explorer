@@ -17,8 +17,13 @@ const Home = () => {
 
     return (
         <>
+            {/* Banner Section */}
             <Jumbotron name="Let's Go Github Explore with User" />
+
+            {/* GitHub Users Search Form Section */}
             <GitHubUsersSearchForm />
+
+            {/* Top Repositories Section */}
             <TopRepositories data={gitHubUsersData} isLoading={isUsersLoading} />
         </>
 
