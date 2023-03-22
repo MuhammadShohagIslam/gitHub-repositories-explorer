@@ -44,9 +44,9 @@ const GitHubUsersSearchForm = () => {
             <SectionTitle title="Search Desire Github User" />
             <div className="w-2/5 m-auto bg-white p-5 mt-10 md:w-5/6 sm:w-[92%] rounded-sm sm:mt-5">
                 <form onSubmit={handleSubmit(handleSearch, handleError)}>
-                    <label className="mb-2 text-sm font-medium text-gray-700 sr-only ">Search</label>
+                    <label htmlFor='search' className="mb-2 text-sm font-medium text-gray-700 sr-only ">Search</label>
                     <div className="relative">
-                        <input type="search" {...register('search', {
+                        <input id='search' type="search" {...register('search', {
                             required: "Search is required!",
                             onChange: (e) => handleChangeSearch(e),
                         })} className={`block w-full p-3 pl-10 sm:pl-6 text-md  text-gray-900 border-2 rounded-sm bg-gray-50 focus:border-gray-400 focus:outline-none ${errors.search?.message && "border-rose-600  focus-visible:border-rose-600"}`} placeholder="Search with User name" />

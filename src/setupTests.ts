@@ -7,6 +7,14 @@ import { server } from "./mocks/server";
 require("jest-canvas-mock");
 
 window.scrollTo = jest.fn();
+global.matchMedia =
+    global.matchMedia ||
+    function () {
+        return {
+            addListener: jest.fn(),
+            removeListener: jest.fn(),
+        };
+    };
 // Establish API mocking before all tests.
 beforeAll(() => server.listen({ onUnhandledRequest: "bypass" }));
 // Reset any request handlers that we may add during the tests,
