@@ -7,10 +7,10 @@ import { AiFillStar } from "react-icons/ai";
 import { githubUserDataByUser } from "../../../redux/actionTypes/githubUserByUserActionTypes";
 
 type AccordionItemPropType = {
-    openAccordionBody: boolean;
-    id: number;
-    toggleAccordion: (index: number) => void;
-    accordion: githubUserDataByUser
+    openAccordionBody?: boolean;
+    id?: number;
+    toggleAccordion?: (index: number) => void;
+    accordion?: githubUserDataByUser
 };
 const AccordionItem = (props: AccordionItemPropType) => {
     const { openAccordionBody, toggleAccordion, id, accordion } = props;
@@ -25,7 +25,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                         : "border-stone-800 dark:border-blue-400 "
                         } `}
                 >
-                    <header className="flex justify-between bg-slate-100 items-center py-4 sm:py-3 pl-8 sm:pl-3 pr-3 cursor-pointer select-none" onClick={() => toggleAccordion(id)}>
+                    <header className="flex justify-between bg-slate-100 items-center py-4 sm:py-3 pl-8 sm:pl-3 pr-3 cursor-pointer select-none" onClick={() => toggleAccordion &&  toggleAccordion(id!)}>
                         <span className="text-indigo font-semibold text-md ">
                             {accordion?.repository_owner}
                         </span>
@@ -37,7 +37,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                             )}
                         </div>
                     </header>
-                    <Collapse isOpened={openAccordionBody}>
+                    <Collapse isOpened={openAccordionBody!}>
                         <div className="pl-8 sm:pl-3 pb-1 mt-2 text-grey-darkest">
                             {accordion &&
                                 accordion.repositories.slice(0, 3).map((accordion) => (

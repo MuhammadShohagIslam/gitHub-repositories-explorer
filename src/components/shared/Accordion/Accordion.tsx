@@ -2,7 +2,7 @@ import { useState } from "react";
 import { githubUserDataByUser } from "../../../redux/actionTypes/githubUserByUserActionTypes";
 import AccordionItem from "./AccordionItem";
 
-const Accordion = ({ data }: { data: any[] }) => {
+const Accordion = ({ data }: { data: githubUserDataByUser[] }) => {
 	const [openAccordionBody, setAccordionBody] = useState<boolean | number>(
 		false
 	);
