@@ -6,9 +6,6 @@ import Jumbotron from '../../components/shared/Jumbotron/Jumbotron';
 import TopRepositories from '../../components/shared/Users/TopRepositories';
 import GitHubUsersSearchForm from '../../components/shared/Form/GitHubUsersSearchForm/GitHubUsersSearchForm';
 
-
-
-
 const Home = () => {
     const dispatch = useAppDispatch();
     const { gitHubUsers } = useAppSelector((state: RootState) => state);
@@ -17,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(loadGitHubUsersData());
     }, [dispatch]);
-    
+
     return (
         <>
             <Jumbotron name="Let's Go Github Explore with User" />

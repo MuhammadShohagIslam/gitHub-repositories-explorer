@@ -15,7 +15,7 @@ type AccordionItemPropType = {
 const AccordionItem = (props: AccordionItemPropType) => {
     const { openAccordionBody, toggleAccordion, id, accordion } = props;
     return (
-        <div className="mb-5 bg-white">
+        <div className="mb-5 sm:mb-3 bg-white">
             <article
                 className="border-b"
             >
@@ -25,7 +25,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                         : "border-stone-800 dark:border-blue-400 "
                         } `}
                 >
-                    <header className="flex justify-between bg-slate-100 items-center py-4 pl-8 pr-3 cursor-pointer select-none" onClick={() => toggleAccordion(id)}>
+                    <header className="flex justify-between bg-slate-100 items-center py-4 sm:py-3 pl-8 sm:pl-3 pr-3 cursor-pointer select-none" onClick={() => toggleAccordion(id)}>
                         <span className="text-indigo font-semibold text-md ">
                             {accordion?.repository_owner}
                         </span>
@@ -38,7 +38,7 @@ const AccordionItem = (props: AccordionItemPropType) => {
                         </div>
                     </header>
                     <Collapse isOpened={openAccordionBody}>
-                        <div className="pl-8 pb-1 mt-2 text-grey-darkest">
+                        <div className="pl-8 sm:pl-3 pb-1 mt-2 text-grey-darkest">
                             {accordion &&
                                 accordion.repositories.slice(0, 3).map((accordion) => (
                                     <Link key={accordion.id} to={accordion?.repository_url} target="_blank">

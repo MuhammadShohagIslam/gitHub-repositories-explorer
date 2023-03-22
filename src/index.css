@@ -43,7 +43,7 @@
     }
     .top_repositories_swiper .swiper-button-next,
     .top_repositories_swiper .swiper-button-prev {
-        margin-top: 98px !important;
+        margin-top: 109px !important;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -52,7 +52,7 @@
     }
     .top_repositories_swiper .swiper-button-next,
     .top_repositories_swiper .swiper-button-prev {
-        margin-top: 105px !important;
+        margin-top: 115px !important;
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {

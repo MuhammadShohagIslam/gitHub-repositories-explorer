@@ -38,13 +38,13 @@ const GitHubUsersSearchForm = () => {
         }
     }
     return (
-        <section className="pt-16 pb-10">
+        <section className="pt-16 pb-10 md:pt-12 md:pb-8 sm:pt-10 sm:md-0 sm:pb-4">
             <SectionTitle title="Search Desire Github User" />
-            <div className="w-2/5 m-auto bg-white p-5 mt-10">
+            <div className="w-2/5 m-auto bg-white p-5 mt-10 md:w-5/6 sm:w-[92%] rounded-sm sm:mt-5">
                 <form onSubmit={handleSubmit(handleSearch, handleError)}>
                     <label className="mb-2 text-sm font-medium text-gray-700 sr-only ">Search</label>
                     <div className="relative">
-                        <input type="search" {...register('search', registerOptions.search)} className={`block w-full p-4 pl-10 text-sm text-gray-900 border-2 rounded-sm bg-gray-50 focus:border-gray-400 focus:outline-none ${errors.search?.message && "border-rose-600  focus-visible:border-rose-600"}`} placeholder="Search with User name" />
+                        <input type="search" {...register('search', registerOptions.search)} className={`block w-full p-3 pl-10 sm:pl-6 text-md  text-gray-900 border-2 rounded-sm bg-gray-50 focus:border-gray-400 focus:outline-none ${errors.search?.message && "border-rose-600  focus-visible:border-rose-600"}`} placeholder="Search with User name" />
                         <button type="submit" className="block mt-2 w-full text-white bottom-2.5 bg-blue-400 hover:bg-blue-500 transition-all focus:outline-none focus:ring-transparent font-medium rounded-sm text-md px-4 py-2 ">Search</button>
                     </div>
                 </form>

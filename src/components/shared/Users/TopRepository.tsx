@@ -4,8 +4,8 @@ import { FaUserGraduate } from 'react-icons/fa';
 
 const TopRepository = ({ data }: { data: githubUsersData }) => {
     return (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow h-[262px]">
-            <div className="flex flex-col items-center p-7">
+        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow h-[262px] sm:h-[246px]">
+            <div className="flex flex-col items-center p-7 sm:p-6">
                 {data?.avatar_url ? (
                     <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={data.avatar_url} alt={data.repository_owner} />
                 ) : (

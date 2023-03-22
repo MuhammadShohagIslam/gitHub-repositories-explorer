@@ -19,7 +19,7 @@ const TopRepositories = ({ data, isLoading }: PropsType) => {
             <SectionTitle title="Top Star Profile" />
             <>
                 {!isLoading ? (
-                    <div className="mt-8">
+                    <div className="mt-8 sm:mt-6">
                         <Swiper
                             slidesPerView={1}
                             navigation={true}
@@ -29,13 +29,13 @@ const TopRepositories = ({ data, isLoading }: PropsType) => {
                                 pauseOnMouseEnter: true
                             }}
                             modules={[Navigation, Autoplay]}
-                            className="h-[320px] md:h-[282px] sm:h-[262px] top_repositories_swiper"
+                            className="h-[320px] md:h-[332px] sm:h-[296px] top_repositories_swiper"
                             breakpoints={{
                                 640: {
                                     slidesPerView: 1,
                                 },
                                 768: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 3,
                                     spaceBetween: 15,
                                 },
                                 1024: {
