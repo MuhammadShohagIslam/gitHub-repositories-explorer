@@ -74,6 +74,7 @@
         ]
     },
     "devDependencies": {
+        "@types/aos": "^3.0.4",
         "@types/react-collapse": "^5.0.1",
         "@types/uuid": "^9.0.1",
         "msw": "^1.2.0",

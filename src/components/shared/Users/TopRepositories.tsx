@@ -15,7 +15,7 @@ type PropsType = {
 };
 const TopRepositories = ({ data, isLoading }: PropsType) => {
     return (
-        <div className="pt-10 sm:py-8 w-11/12 m-auto pb-12">
+        <div data-aos="fade-up" data-aos-delay="1" className="pt-10 sm:py-8 w-11/12 m-auto pb-12">
             <SectionTitle title="Top Star Profile" />
             <>
                 {!isLoading ? (

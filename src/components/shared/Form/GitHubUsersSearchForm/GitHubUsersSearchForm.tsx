@@ -40,7 +40,7 @@ const GitHubUsersSearchForm = () => {
         }
     }
     return (
-        <section className="pt-16 pb-10 md:pt-12 md:pb-8 sm:pt-10 sm:md-0 sm:pb-4">
+        <section data-aos="fade-up" data-aos-delay="1" className="pt-16 pb-10 md:pt-12 md:pb-8 sm:pt-10 sm:md-0 sm:pb-4">
             <SectionTitle title="Search Desire Github User" />
             <div className="w-2/5 m-auto bg-white p-5 mt-10 md:w-5/6 sm:w-[92%] rounded-sm sm:mt-5">
                 <form onSubmit={handleSubmit(handleSearch, handleError)}>
