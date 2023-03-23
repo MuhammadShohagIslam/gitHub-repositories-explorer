@@ -1,4 +1,4 @@
-<h2>بسم الله الرحمن الرحيم(In the name of God, the Merciful, the Compassionate)<h2>
+<h3>بسم الله الرحمن الرحيم(In the name of Allah(God), the Merciful, the Compassionate)<h3>
 
 <h2 align="center">I am Muhammad Jhohirul Islam Shohag</h2>
 
