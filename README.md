@@ -52,6 +52,7 @@
 - React Testing Library
 - Swiper
 - React Hot Toast
+- AOS
 
 
 
