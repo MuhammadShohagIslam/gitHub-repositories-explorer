@@ -12,7 +12,7 @@
 ## Home Page
 
 <div align="center">
-    <img width="800" src="https://github.com/MuhammadShohagIslam/API-Development/blob/main/preview/home.png">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/gitHub-repositories-explorer/blob/main/preview/home.png">
 </div> 
 <p>On the home, we can get information about project such banner, searching github profile, top star profile</p>
 
@@ -26,13 +26,13 @@
 
 -   ### Searching Github Profile Section
 <div align="center">
-    <img width="800" src="https://github.com/MuhammadShohagIslam/ecommerce-frontend/blob/main/preview/search.JPG">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/gitHub-repositories-explorer/blob/main/preview/search.JPG">
 </div> 
 <p>On the Searching Github Profile Section, we can search your desire github profile whatever we want. </p>
 
 -   ### Searching Github Profile Section
 <div align="center">
-    <img width="800" src="https://github.com/MuhammadShohagIslam/ecommerce-frontend/blob/main/preview/top-start-profile.JPG">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/gitHub-repositories-explorer/blob/main/preview/top-start-profile.JPG">
 </div> 
 <p>On the Top Star Profile, we can see top star github profile based star count repositories</p>
 
