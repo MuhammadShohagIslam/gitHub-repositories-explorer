@@ -1,47 +1,51 @@
-# Getting Started with Create React App
+<h2>بسم الله الرحمن الرحيم(In the name of God, the Merciful, the Compassionate)<h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center">I am Muhammad Jhohirul Islam Shohag</h2>
 
-## Available Scripts
+# Let's Talk About GitHub Repositories Explorer With TypeScript
 
-In the project directory, you can run:
+### Live Project: [https://profound-youtiao-261894.netlify.app/](https://profound-youtiao-261894.netlify.app/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Description About My Project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Home Page
 
-### `npm test`
+<div align="center">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/API-Development/blob/main/preview/home.png">
+</div> 
+<p>On the home, we can get information about project such banner, searching github profile, top star profile</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>On the home page, we can get some below features</p>
+<ul>
+    <li>Navbar Section</li>
+    <li>Banner Section</li>
+    <li>Searching Github Profile</li>
+    <li>Top Star Profile</li>
+</ul>
 
-### `npm run build`
+-   ### Searching Github Profile Section
+<div align="center">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/ecommerce-frontend/blob/main/preview/search.JPG">
+</div> 
+<p>On the Searching Github Profile Section, we can search your desire github profile whatever we want. </p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   ### Searching Github Profile Section
+<div align="center">
+    <img width="800" src="https://github.com/MuhammadShohagIslam/ecommerce-frontend/blob/main/preview/top-start-profile.JPG">
+</div> 
+<p>On the Top Star Profile, we can see top star github profile based star count repositories</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Let's See Which Technology use of our project
+- TypeScript
+- Redux
+- Docker
+- CI (GitHub Action)
+- React Hook Form
+- Jest for Testing
+- React Testing Library
+- Swiper
+- React Hot Toast
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-"# gitHub-repositories-explorer" 
