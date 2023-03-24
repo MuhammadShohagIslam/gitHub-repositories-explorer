@@ -44,6 +44,7 @@
 
 # Let's See Which Technology use of our project
 - TypeScript
+- React JS
 - Redux
 - Docker
 - CI (GitHub Action)
@@ -52,6 +53,7 @@
 - React Testing Library
 - Swiper
 - React Hot Toast
+- AOS
 
 
 
