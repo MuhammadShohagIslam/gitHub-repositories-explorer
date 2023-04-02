@@ -26,7 +26,7 @@
 
 -   ### Searching Github Profile Section
 <div align="center">
-    <img width="800" src="https://github.com/MuhammadShohagIslam/gitHub-repositories-explorer/blob/main/preview/search.JPG">
+    <img width="850" src="https://github.com/MuhammadShohagIslam/gitHub-repositories-explorer/blob/main/preview/search.JPG">
 </div> 
 <p>On the Searching Github Profile Section, we can search your desire github profile whatever we want. </p>
 
