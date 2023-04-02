@@ -4,8 +4,6 @@
 
 # Let's Talk About GitHub Repositories Explorer With TypeScript
 
-### Live Project: [https://profound-youtiao-261894.netlify.app/](https://profound-youtiao-261894.netlify.app/)
-
 
 ### Description About My Project
 
